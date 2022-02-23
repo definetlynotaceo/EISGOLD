@@ -14,7 +14,7 @@ function my_stylesheets()
   wp_register_style( 'splide.css', get_template_directory_uri() . '/js/lib/splide/dist/css/splide.min.css', array(), '1.0', 'all' );
   wp_enqueue_style( 'splide.css' );
 
-  // Splide
+  // FONTAWESOME
   wp_register_style( 'fontawesome.css', get_template_directory_uri() . '/js/lib/fontawesome/css/all.css', array(), '1.0', 'all' );
   wp_enqueue_style( 'fontawesome.css' );
 }

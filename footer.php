@@ -4,59 +4,48 @@ $footer_id = $footer->term_id;
 $footer_menu = wp_get_nav_menu_object( $footer_id );
 ?>
 <footer id="footer">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xxl-8 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-					<?php if ( have_rows( 'company_info', $footer_menu ) ):
-						while ( have_rows('company_info', $footer_menu ) ) : the_row(); ?>
-
-						<?php $footer_logo = get_sub_field('logo');
-							if( !empty( $footer_logo ) ): ?>
-							<div class="logo">
-								<a href="<?php echo get_home_url();?>">
-									<img class="footer-logo" src="<?php echo esc_url($footer_logo['url']); ?>" alt="<?php echo esc_attr($footer_logo['alt']); ?>">
-								</a>
-							</div>
-							<?php else: ?>
-								<div class="logo">
-									<a href="<?php echo home_url(); ?>">
-										<img class="footer-logo" src="<?php echo get_template_directory_uri(); ?>/img/logos/logo.svg" alt="Logo" class="logo-img">
-									</a>
-								</div>
-							<?php endif; ?>
-
-						<div class="information">
-							<?php $adress = get_sub_field('adress');
-							if ( !empty ( $adress ) ) {
-								echo $adress;
-							}; ?>
-						</div>
-
-						<div class="links">
-							<?php if ( have_rows( 'additional_links' ) ):
-								while ( have_rows('additional_links' ) ) : the_row();
-								$footer_link = get_sub_field('link');
-								$footer_link_target = $link['target'] ? $link['target'] : '_self';?>
-
-								<a href="<?php echo esc_url($footer_link['url']); ?>" target="<?php echo esc_attr( $footer_link_target ); ?>"><?php echo esc_html( $footer_link['title'] ); ?></a>
-
-								<?php endwhile;
-							endif; ?>
-						</div>
-
-						<?php endwhile;
-					endif; ?>
+				<div class="col-4">
+					<h5>Folge uns:</h5>
+					<?php wp_nav_menu(array( 'theme_location' => 'extra' )); ?>
 				</div>
-				<div class="col-xxl-2 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+				<div class="col-4">
 					<div class="sitemap">
-						<h4>Sitemap</h4>
-						<?php wp_nav_menu(array( 'theme_location' => 'main' )); ?>
+						<h5>Besuche uns</h5>
+						<?php if ( have_rows( 'company_info', $footer_menu ) ):
+							while ( have_rows('company_info', $footer_menu ) ) : the_row(); ?>
+
+							<div class="information">
+								<?php $adress = get_sub_field('adress');
+								if ( !empty ( $adress ) ) {
+									echo $adress;
+								}; ?>
+							</div>
+
+							<?php endwhile;
+						endif; ?>
 					</div>
 				</div>
-				<div class="col-xxl-2 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
-					<div class="rechtliches">
-						<h4>Rechtliches</h4>
-						<?php wp_nav_menu(array( 'theme_location' => 'footer' )); ?>
+				<div class="col-4">
+					<div class="booking__container">
+						<?php if ( have_rows( 'company_info', $footer_menu ) ):
+							while ( have_rows('company_info', $footer_menu ) ) : the_row(); ?>
+
+							<h5>Reservieren oder Vorbestellen</h5>
+							<div class="links">
+								<?php if ( have_rows( 'additional_links' ) ):
+									while ( have_rows('additional_links' ) ) : the_row();
+									$footer_link = get_sub_field('link');
+									$footer_link_target = $link['target'] ? $link['target'] : '_self';?>
+
+									<a href="<?php echo esc_url($footer_link['url']); ?>" target="<?php echo esc_attr( $footer_link_target ); ?>"><?php echo esc_html( $footer_link['title'] ); ?></a>
+
+									<?php endwhile;
+								endif; ?>
+							</div>
+						<?php endwhile;
+					endif; ?>
 					</div>
 				</div>
 			</div>
@@ -64,7 +53,7 @@ $footer_menu = wp_get_nav_menu_object( $footer_id );
 
 	<div class="copy">
 		<div class="wrapper">
-			<div class="container">
+			<div class="container-fluid">
 				<div class="row">
 					<div class="col-12">
 						<p class="copyright">

@@ -1,34 +1,39 @@
-@charset "UTF-8";
 /*!
- * Theme Name: 5pectre Blank Theme
- * Theme URI: https://5pectre.com/
- * Description: Das hier ist das Blank-Theme deiner digitalen Agentur 5pectre. Dieses stellt das Entwicklungs-Framework für die Umsetzung von individuell gestalteten Wordpress-Themes dar.
+ * Theme Name: EISGOLD powered by 5pectre
+ * Theme URI: https://5pectre.com/eisgold
+ * Description:
  * Version: 3.0
  * Author: Erik Jung, Roman Tsymbal, Christian Schnabel
  * Author URI: https://5pectre.com
  * Tags: 5pectre, HTML5, CSS3, PHP, ACF, CF7
  * */
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
+@font-face {
+  font-family: Futura;
+  src: url("fonts/futura medium bt.ttf");
+}
 html, body {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: futura;
   font-weight: 300;
-  font-size: 16px;
-  color: #19181E;
+  font-size: 18px;
+  color: #FFFFFF;
   overscroll-behavior: none;
+  overflow-x: hidden;
+  background-color: #000000 !important;
 }
-html main, body main {
-  width: 100%;
+html main, html footer, body main, body footer {
+  width: 90%;
+  margin: auto;
   max-width: 100vw;
   height: fit-content;
-  padding: 90px 0;
+  background: #000000;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "DM Serif Display", sans-serif;
+  font-family: futura;
   font-weight: bold;
 }
 h1.h1, h2.h1, h3.h1, h4.h1, h5.h1, h6.h1 {
@@ -51,28 +56,93 @@ h1.h6, h2.h6, h3.h6, h4.h6, h5.h6, h6.h6 {
 }
 
 span, a, p {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 100;
   text-decoration: none;
   list-style: none;
-  font-family: "Roboto", sans-serif;
+  font-family: futura;
   font-smoothing: antialiased;
   font-smoothing: grayscale;
 }
 
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash-reverse {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
 .button {
-  background: #19181E;
+  background: #FFFFFF;
   width: fit-content;
-}
-.button a {
-  display: inline-block;
-  padding: 12px 42px;
-  color: #FFFFFF;
+  padding: 12px 72px 12px 24px;
+  position: relative;
+  color: #000000;
   text-decoration: none;
-  font-weight: bold;
+  transition: 0.2s;
 }
-.button a:hover {
-  color: #FFFFFF;
+.button:hover {
+  transiton: 0.2s;
+  padding: 12px 100px 12px 24px;
+  color: #000000;
+}
+.button:hover::after {
+  content: "";
+  height: 2px;
+  width: 58px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 22px;
+  background: #000000;
+  transition: 0.2s;
+}
+.button:hover::before {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-top: 5px solid #000000;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transition: 0.2s;
+}
+.button::after {
+  content: "";
+  height: 2px;
+  width: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 22px;
+  background: #000000;
+  transition: 0.2s;
+}
+.button::before {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-top: 5px solid #000000;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  right: 12px;
+  transition: 0.2s;
 }
 
 form {
@@ -88,7 +158,7 @@ form input[type=search] {
   text-align: right;
 }
 form button[type=submit] {
-  background: #19181E !important;
+  background: #000000 !important;
   border: none !important;
   position: absolute;
   left: 0;
@@ -103,7 +173,7 @@ form button[type=submit] {
 form button[type=submit]::after {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  content: "";
+  content: "\f002";
   position: absolute;
   color: white;
   font-size: 16px;
@@ -115,26 +185,30 @@ form button[type=submit]::after {
 #navigation {
   width: 100%;
   padding: 20px 0;
-  background: #FFFFFF;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
-  position: fixed;
+  background: none;
+  color: white;
 }
-#navigation .container .row .nav-img-col {
+#navigation .container-fluid {
+  width: 90%;
+  margin: auto;
+}
+#navigation .container-fluid .row .nav-img-col {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
 }
-#navigation .container .row .nav-img-col .logo {
+#navigation .container-fluid .row .nav-img-col .logo {
   max-height: 100%;
-  height: 50px;
+  height: 100px;
+  margin-right: 100px;
 }
-#navigation .container .row .menu-item-col {
+#navigation .container-fluid .row .menu-item-col {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
-#navigation .container .row .nav-icon-col {
+#navigation .container-fluid .row .nav-icon-col {
   justify-content: flex-end;
 }
 
@@ -175,7 +249,7 @@ form button[type=submit]::after {
   text-decoration: none;
 }
 #post .post-link .h4 {
-  color: #19181E;
+  color: #000000;
 }
 
 .sidebar__container #sidebar {
@@ -261,7 +335,7 @@ form button[type=submit]::after {
   transition: 0.4s;
 }
 #accordeon .accordion h3 {
-  font-family: "DM Serif Display", sans-serif;
+  font-family: futura;
 }
 #accordeon .active, #accordeon .accordion:hover {
   box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9, 7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
@@ -276,7 +350,7 @@ form button[type=submit]::after {
 }
 
 #content {
-  background: #19181E;
+  background: #000000;
   padding: 200px 0;
 }
 #content .page-title {
@@ -316,49 +390,37 @@ form button[type=submit]::after {
 
 #footer {
   padding-top: 100px;
-  background: #19181E;
+  background: #000000;
 }
-#footer a, #footer span, #footer p, #footer strong, #footer em {
+#footer .booking__container .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#footer .menu i {
   color: #FFFFFF;
 }
-#footer h1, #footer h2, #footer h3, #footer h4, #footer h5, #footer h6 {
-  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 20px;
+#footer h5 {
+  color: #FFFFFF;
 }
-#footer .information {
-  margin: 50px 0;
-}
-#footer .footer-logo {
-  width: 200px;
-}
-#footer .menu {
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-#footer .menu .menu-item {
-  margin-bottom: 10px;
-}
-#footer .menu .menu-item a {
-  margin-right: 0;
+#footer span, #footer a, #footer p {
+  color: #707070;
+  text-decoration: none;
 }
 #footer .copy {
-  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
   margin-top: 50px;
 }
 #footer .copy p.copyright {
-  color: #19181E;
+  color: #707070;
   margin: 10px 0;
 }
 #footer .copy p.copyright a {
-  color: #19181E;
+  color: #707070;
   text-decoration: none;
 }
 
 #hero {
-  height: 50vh;
+  height: fit-content;
   padding-top: 70px;
   display: flex;
   flex-direction: column;
@@ -366,9 +428,156 @@ form button[type=submit]::after {
   margin-bottom: 100px;
   box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.2);
 }
-#hero .h1, #hero .h4 {
+#hero h1 {
+  color: #FFFFFF;
+  font-size: 8rem;
+  margin-bottom: 50px;
+}
+#hero h1 span {
+  color: #707070;
+  font-size: 8rem;
+  position: relative;
+  transition: 0.5s;
+}
+#hero h1 span:hover {
+  color: #FFFFFF;
+  transition: 0.2s;
+}
+#hero h1 span:hover svg {
+  animation: dash 0.5s linear forwards;
+}
+#hero h1 span svg {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  top: 90%;
+  left: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash-reverse 0.5s linear forwards;
+}
+#hero p {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+}
+#hero .hero__image .row {
+  height: 100%;
+}
+#hero .hero__image .row .sticky__container {
+  position: relative;
+}
+#hero .hero__image .row .sticky__container .orbit {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+#hero .hero__image .row img {
+  width: 80%;
+  height: auto;
+  margin-right: 100px;
+}
+
+#mission h2 {
+  color: #FFFFFF;
+  font-size: 4rem;
+  text-align: center;
+}
+
+#topic .topic__container {
+  cursor: pointer;
+  max-width: 600px;
+  margin: 150px auto;
+}
+#topic .topic__container:hover .image__container {
+  width: calc(100% - 30px);
+  transition: 0.2s;
+}
+#topic .topic__container:hover .image__container .topic__image {
+  width: 150%;
+  transition: 0.5s;
+}
+#topic .topic__container.second {
+  transform: translateY(50%);
+}
+#topic .topic__container .image__container {
+  margin: auto;
+  width: 100%;
+  height: 0;
+  padding-bottom: 150%;
+  overflow: hidden;
+  max-height: 100vh;
+  transition: 1s;
+  transition: 0.2s;
+}
+#topic .topic__container .image__container .topic__image {
+  width: 100%;
+  transition: 0.2s;
+}
+#topic .topic__container .text__container {
+  margin: 50px auto 0;
+  width: calc(100% - 60px);
+}
+#topic .topic__container .text__container h3 {
   color: #FFFFFF;
 }
-#hero .h4 {
-  font-weight: 100;
+#topic .topic__container .text__container p {
+  color: #707070;
+}
+
+#values h2 {
+  color: #FFFFFF;
+  font-size: 4rem;
+  padding-bottom: 100px;
+}
+#values .value__container h3 {
+  color: #FFFFFF;
+  margin-bottom: 35px;
+}
+#values .value__container p {
+  color: #707070;
+}
+
+#video .pointer__container {
+  margin-top: 50px;
+}
+#video .video__container {
+  margin: 50px 0;
+  width: 100%;
+}
+#video .video__container img {
+  width: 100%;
+  height: auto;
+}
+
+#cta h2 {
+  color: #FFFFFF;
+  font-size: 4rem;
+}
+#cta a {
+  color: #707070;
+  font-size: 4rem;
+  margin-bottom: 50px;
+  text-decoration: none;
+  transition: 0.2s;
+  position: relative;
+}
+#cta a:hover {
+  color: #FFFFFF;
+  transition: 0.2s;
+}
+#cta a:hover svg {
+  animation: dash 0.5s linear forwards;
+}
+#cta a svg {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash-reverse 0.5s linear forwards;
 }

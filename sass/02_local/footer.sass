@@ -4,40 +4,29 @@
   padding-top: 100px
   background: $black
 
-  a, span, p, strong, em
+  .booking__container
+    .links
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+
+  .menu i
     color: $white
 
-  h1, h2, h3, h4, h5, h6
-    background: $gradient
-    -webkit-background-clip: text
-    -webkit-text-fill-color: transparent
-    margin-bottom: 20px
+  h5
+    color: $white
 
-  .information
-    margin: 50px 0
-
-  .footer-logo
-    width: 200px
-
-  .menu
-    flex-direction: column
-    justify-content: center
-    align-items: flex-start
-
-    .menu-item
-      margin-bottom: 10px
-
-      a
-        margin-right: 0
+  span, a, p
+    color: $color2
+    text-decoration: none
 
   .copy
-    background: $gradient
     margin-top: 50px
 
     p.copyright
-      color: $black
+      color: $color2
       margin: 10px 0
 
       a
-        color: $black
+        color: $color2
         text-decoration: none

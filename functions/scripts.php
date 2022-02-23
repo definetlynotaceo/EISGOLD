@@ -34,7 +34,7 @@ function my_footer_enqueue()
   wp_enqueue_script( 'bootstrap' );
 
   // FONTAWESOME
-  wp_register_script( 'fontawesome', get_template_directory_uri() . '/js/lib/fontawesome/js/all.js', array(), '1.0', true );
+  wp_register_script( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js', array(), '1.0', true );
   wp_enqueue_script( 'fontawesome' );
 
   // Bei Bedarf freischalten und Informationen einfügen
