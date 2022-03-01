@@ -61,10 +61,11 @@
       color: $color2
 
 #video
+  margin-bottom: 150px
   .pointer__container
     margin-top: 50px
   .video__container
-    margin: 50px 0
+    margin-top: 50px
     width: 100%
 
     img
@@ -100,3 +101,78 @@
       stroke-dasharray: 1000
       stroke-dashoffset: 1000
       animation: dash-reverse .5s linear forwards
+
+#blog
+  margin-bottom: 150px
+  .splide
+    position: relative
+    .title__container
+      h2
+        color: $white
+        font-size: 4rem
+        padding-bottom: 100px
+
+    .splide__arrows
+
+      .splide__arrow
+        position: absolute
+        border-radius: 0
+        background: none
+        opacity: 1
+
+        &:hover
+          opacity: 1
+
+        &.splide__arrow--prev
+          height: 4rem
+          top: 0
+          right: 5rem !important
+          left: auto
+
+          svg
+            transform: scale(2.5) translateY(100%) rotate(180deg)
+            opacity: 1
+
+            .cls-1
+              stroke: $white
+
+        &.splide__arrow--next
+          height: 4rem
+          top: 0
+          right: 0
+
+          svg
+            transform: scale(2.5) translateY(100%)
+
+            .cls-1
+              stroke: $white
+
+  .splide__slide
+    height: fit-content
+    padding: 0
+
+    .image__container
+      position: relative
+      width: 100%
+      padding-bottom: 133.3333%
+      height: 0
+      overflow: hidden
+
+      img
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        width: 100%
+        height: auto
+
+    .text__container
+      width: 100%
+
+      .time
+        color: $color2
+        margin: 25px 0
+
+      .desc
+        color: $white
+        word-wrap: break-word

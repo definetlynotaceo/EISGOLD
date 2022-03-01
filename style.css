@@ -540,11 +540,14 @@ form button[type=submit]::after {
   color: #707070;
 }
 
+#video {
+  margin-bottom: 150px;
+}
 #video .pointer__container {
   margin-top: 50px;
 }
 #video .video__container {
-  margin: 50px 0;
+  margin-top: 50px;
   width: 100%;
 }
 #video .video__container img {
@@ -580,4 +583,79 @@ form button[type=submit]::after {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   animation: dash-reverse 0.5s linear forwards;
+}
+
+#blog {
+  margin-bottom: 150px;
+}
+#blog .splide {
+  position: relative;
+}
+#blog .splide .title__container h2 {
+  color: #FFFFFF;
+  font-size: 4rem;
+  padding-bottom: 100px;
+}
+#blog .splide .splide__arrows .splide__arrow {
+  position: absolute;
+  border-radius: 0;
+  background: none;
+  opacity: 1;
+}
+#blog .splide .splide__arrows .splide__arrow:hover {
+  opacity: 1;
+}
+#blog .splide .splide__arrows .splide__arrow.splide__arrow--prev {
+  height: 4rem;
+  top: 0;
+  right: 5rem !important;
+  left: auto;
+}
+#blog .splide .splide__arrows .splide__arrow.splide__arrow--prev svg {
+  transform: scale(2.5) translateY(100%) rotate(180deg);
+  opacity: 1;
+}
+#blog .splide .splide__arrows .splide__arrow.splide__arrow--prev svg .cls-1 {
+  stroke: #FFFFFF;
+}
+#blog .splide .splide__arrows .splide__arrow.splide__arrow--next {
+  height: 4rem;
+  top: 0;
+  right: 0;
+}
+#blog .splide .splide__arrows .splide__arrow.splide__arrow--next svg {
+  transform: scale(2.5) translateY(100%);
+}
+#blog .splide .splide__arrows .splide__arrow.splide__arrow--next svg .cls-1 {
+  stroke: #FFFFFF;
+}
+#blog .splide__slide {
+  height: fit-content;
+  padding: 0;
+}
+#blog .splide__slide .image__container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 133.3333%;
+  height: 0;
+  overflow: hidden;
+}
+#blog .splide__slide .image__container img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+}
+#blog .splide__slide .text__container {
+  width: 100%;
+}
+#blog .splide__slide .text__container .time {
+  color: #707070;
+  margin: 25px 0;
+}
+#blog .splide__slide .text__container .desc {
+  color: #FFFFFF;
+  word-wrap: break-word;
 }

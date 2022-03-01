@@ -139,6 +139,106 @@
   </div>
 </section>
 
+<section id="blog">
+  <div class="splide">
+    <div class="title__container">
+      <h2>Die neusten News + Updates</h2>
+    </div>
+    <div class="splide__arrows">
+      <button class="splide__arrow splide__arrow--prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="70.203" height="71.524" viewBox="0 0 70.203 71.524">
+          <defs>
+            <style>
+              .cls-1 {
+                fill: none;
+                stroke-linecap: round;
+                stroke-width: 3px;
+              }
+            </style>
+          </defs>
+          <g id="Gruppe_2704" data-name="Gruppe 2704" transform="translate(68.081 69.403) rotate(180)">
+            <line id="Linie_178" data-name="Linie 178" class="cls-1" x1="66.581" transform="translate(0 33.641)"/>
+            <line id="Linie_179" data-name="Linie 179" class="cls-1" x1="33.641" y1="33.641" transform="translate(0 33.641)"/>
+            <line id="Linie_180" data-name="Linie 180" class="cls-1" x1="33.641" y2="33.641" transform="translate(0)"/>
+          </g>
+        </svg>
+      </button>
+      <button class="splide__arrow splide__arrow--next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="70.203" height="71.524" viewBox="0 0 70.203 71.524">
+          <defs>
+            <style>
+              .cls-1 {
+                fill: none;
+                stroke-linecap: round;
+                stroke-width: 3px;
+              }
+            </style>
+          </defs>
+          <g id="Gruppe_2704" data-name="Gruppe 2704" transform="translate(68.081 69.403) rotate(180)">
+            <line id="Linie_178" data-name="Linie 178" class="cls-1" x1="66.581" transform="translate(0 33.641)"/>
+            <line id="Linie_179" data-name="Linie 179" class="cls-1" x1="33.641" y1="33.641" transform="translate(0 33.641)"/>
+            <line id="Linie_180" data-name="Linie 180" class="cls-1" x1="33.641" y2="33.641" transform="translate(0)"/>
+          </g>
+        </svg>
+
+      </button>
+    </div>
+    <div class="splide__track">
+  		<ul class="splide__list">
+  			<li class="splide__slide">
+          <div class="image__container">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/assets/image5.png" alt="">
+          </div>
+          <div class="text__container">
+            <p class="time">12. Dezember 2021</p>
+            <h3 class="desc">Lorem Ipsum dolor sit met ist nur ein Dummytext für Entwickler und Designer.</h3>
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="image__container">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/assets/image5.png" alt="">
+          </div>
+          <div class="text__container">
+            <p class="time">12. Dezember 2021</p>
+            <h3 class="desc">Lorem Ipsum dolor sit met ist nur ein Dummytext für Entwickler und Designer.</h3>
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="image__container">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/assets/image5.png" alt="">
+          </div>
+          <div class="text__container">
+            <p class="time">12. Dezember 2021</p>
+            <h3 class="desc">Lorem Ipsum dolor sit met ist nur ein Dummytext für Entwickler und Designer.</h3>
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="image__container">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/assets/image5.png" alt="">
+          </div>
+          <div class="text__container">
+            <p class="time">12. Dezember 2021</p>
+            <h3 class="desc">Lorem Ipsum dolor sit met ist nur ein Dummytext für Entwickler und Designer.</h3>
+          </div>
+        </li>
+  		</ul>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  var splide = new Splide( '.splide', {
+  perPage: 3,
+  perMove: 1,
+  gap: "30px",
+  rewind : true,
+  pagination: false,
+  arrows: false,
+  } );
+
+  splide.mount();
+</script>
+
 <section id="cta">
   <div class="container-fluid">
     <div class="row">
