@@ -17,6 +17,10 @@ function my_stylesheets()
   // FONTAWESOME
   wp_register_style( 'fontawesome.css', get_template_directory_uri() . '/js/lib/fontawesome/css/all.css', array(), '1.0', 'all' );
   wp_enqueue_style( 'fontawesome.css' );
+
+  // LOCOMOTIVEE SCROLL
+  wp_register_style( 'loco', get_template_directory_uri() . '/js/lib/loco/locomotive-scroll.css', array(), '1.0', 'all' );
+  wp_enqueue_style( 'loco' );
 }
 add_action('wp_enqueue_scripts', 'my_stylesheets');
 

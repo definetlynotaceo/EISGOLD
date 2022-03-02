@@ -28,7 +28,19 @@
 			tests: {}
 		});
 		</script>
-
+		<script>
+			window.addEventListener("load", () => {
+			  const scroll = new LocomotiveScroll({
+			    el: document.querySelector("[data-scroll-container]"),
+			    smooth: true,
+			    multiplier: 0.75,
+			    scrollFromAnywhere: true,
+			  });
+			});
+			setTimeout(() => {
+			  scroll.update();
+			}, 5000);
+		</script>
 	</head>
 	<body <?php body_class(); ?>>
-		<?php include 'sections/01_ui/navigation.php';?>
+		<?php //include 'sections/01_ui/navigation.php';?>

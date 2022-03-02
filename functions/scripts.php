@@ -37,6 +37,10 @@ function my_footer_enqueue()
   wp_register_script( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js', array(), '1.0', true );
   wp_enqueue_script( 'fontawesome' );
 
+  // LOCOMOTIVEE SCROLL
+  wp_register_script( 'loco', get_template_directory_uri() . '/js/lib/loco/locomotive-scroll.min.js', array(), '1.0', false );
+  wp_enqueue_script( 'loco' );
+
   // Bei Bedarf freischalten und Informationen einfügen
   // wp_register_script( '// ** scriptname **//', '// ** scriptsource ** //', array(), '1.0', true );
   // wp_enqueue_script( '// ** scriptname **//' );

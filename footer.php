@@ -3,7 +3,7 @@ $footer = get_term_by('name', 'footer', 'nav_menu');
 $footer_id = $footer->term_id;
 $footer_menu = wp_get_nav_menu_object( $footer_id );
 ?>
-<footer id="footer">
+<footer data-scroll id="footer">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-4">
@@ -65,6 +65,13 @@ $footer_menu = wp_get_nav_menu_object( $footer_id );
 		</div>
 	</div>
 </footer>
+
+<script>
+	const scroll = new LocomotiveScroll({
+	    el: document.querySelector('[data-scroll-container]'),
+	    smooth: true
+	});
+</script>
 
 <?php wp_footer(); ?>
 

@@ -12,11 +12,13 @@
 
 */
 get_header(); ?>
+<main data-scroll-container role="main">
+  <div data-scroll-section class="">
+    <?php include 'sections/01_ui/navigation.php'; ?>
+    <?php include 'sections/01_ui/styles.php'; ?>
+    <?php include 'sections/03_parts/hero.php'; ?>
+    <?php include 'sections/03_parts/body.php'; ?>
+    <?php get_footer(); ?>
 
-<main role="main">
-  <?php include 'sections/01_ui/styles.php'; ?>
-  <?php include 'sections/03_parts/hero.php'; ?>
-  <?php include 'sections/03_parts/body.php'; ?>
+  </div>
 </main>
-
-<?php get_footer(); ?>

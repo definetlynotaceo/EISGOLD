@@ -427,17 +427,22 @@ form button[type=submit]::after {
   justify-content: center;
   margin-bottom: 100px;
   box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+#hero .col-12 {
+  position: relative;
 }
 #hero h1 {
   color: #FFFFFF;
-  font-size: 8rem;
+  font-size: 8vw;
   margin-bottom: 50px;
 }
 #hero h1 span {
   color: #707070;
-  font-size: 8rem;
+  font-size: 8vw;
   position: relative;
   transition: 0.5s;
+  cursor: pointer;
 }
 #hero h1 span:hover {
   color: #FFFFFF;
@@ -467,17 +472,55 @@ form button[type=submit]::after {
 #hero .hero__image .row .sticky__container {
   position: relative;
 }
+#hero .hero__image .row .sticky__container .sticky {
+  top: 15px;
+  position: sticky;
+}
 #hero .hero__image .row .sticky__container .orbit {
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-start;
 }
-#hero .hero__image .row img {
+#hero .hero__image .row .sticky__container .orbit .ball {
   width: 80%;
+  height: 0;
+  padding-bottom: 80%;
+  background: #020024;
+  background: radial-gradient(farthest-corner at 30% 70%, black 0%, #faaf3a 100%);
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#hero .hero__image .row .sticky__container .image__container {
+  width: 100%;
+  height: 0;
+  padding-bottom: 133.333%;
   height: auto;
-  margin-right: 100px;
+  overflow: hidden;
+  position: relative;
+}
+#hero .hero__image .row .sticky__container .image__container img {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#hero .data__img {
+  position: absolute;
+  width: 500px;
+  height: auto;
+  z-index: 0;
+  opacity: 0;
+}
+#hero .data__img.img1 {
+  top: 5%;
+  right: 10%;
+}
+#hero .data__img.img2 {
+  left: 10%;
+  bottom: 30%;
 }
 
 #mission h2 {
@@ -495,10 +538,6 @@ form button[type=submit]::after {
   width: calc(100% - 30px);
   transition: 0.2s;
 }
-#topic .topic__container:hover .image__container .topic__image {
-  width: 150%;
-  transition: 0.5s;
-}
 #topic .topic__container.second {
   transform: translateY(50%);
 }
@@ -506,14 +545,19 @@ form button[type=submit]::after {
   margin: auto;
   width: 100%;
   height: 0;
-  padding-bottom: 150%;
+  padding-bottom: 133.3333%;
   overflow: hidden;
   max-height: 100vh;
-  transition: 1s;
   transition: 0.2s;
+  position: relative;
 }
 #topic .topic__container .image__container .topic__image {
   width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   transition: 0.2s;
 }
 #topic .topic__container .text__container {

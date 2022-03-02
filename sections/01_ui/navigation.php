@@ -4,7 +4,7 @@ $menu_id = $term->term_id;
 $menu = wp_get_nav_menu_object( 2 );
 ?>
 
-<section id="navigation">
+<section data-scroll id="navigation">
     <div class="container-fluid">
       <div class="row">
         <div class="col-xxl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8 menu-item-col ninja d-flex">
